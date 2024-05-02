@@ -1,0 +1,7 @@
+{
+    "name": "mgs/mgs-laravel-extensions",
+    "description": "Opis Twojej paczki",
+    "require": {
+        "php": "^7.4"
+    }
+}
