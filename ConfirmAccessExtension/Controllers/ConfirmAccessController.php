@@ -1,20 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace MGS\ConfirmAccessExtension\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-// class ConfirmAccessController extends Controller
-// {
-//     public function redirect( Request $request ) {
-//         dd( 'ConfirmAccessController redirect()', $request );
-
-//         // if( $request->input( '' ) ) {
-
-//         // } else if( $request->input( '' ) ) {}
-//         // return view('accounts.confirmed_account')
-//         //         ->with( 'accountType', $request->input(  ) )
-//         //         ->with( 'isEdit', true )
-//         //         ->with( 'company', $company );
-//     }
-// }
+class ConfirmAccessController extends Controller
+{
+    public function redirect( Request $request ) {
+        if ( $request->input( 'response' ) == 'yes' ) {
+            return redirect( $request->input( 'yes_route' ) );
+        } else if( $request->input( 'response' ) == 'no' ) {
+            return redirect( $request->input( 'no_route' ) );
+        } else {
+            dd( 'ERROR in ConfirmAccessController::redirect' );
+        }
+}
