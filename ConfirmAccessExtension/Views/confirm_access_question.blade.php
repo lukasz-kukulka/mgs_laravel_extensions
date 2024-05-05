@@ -16,10 +16,13 @@
                                 <input type="hidden" name="no_route" value="{{ $noRoute }}">
                                 <div class="row mt-3">
                                     <div class="col">
-                                        <button type="submit" class="btn btn-success btn-block" name="response" value="yes">{{ __('cae.yes', [], ( __DIR__ . '/../Translations' ) ) }}</button>
+                                        @php
+                                            $translations = include base_path( 'vendor\mgs\mgs-laravel-extensions\ConfirmAccessExtension\Translations\\' . app()->getLocale() . '\cae.php' );
+                                        @endphp
+                                        <button type="submit" class="btn btn-success btn-block" name="response" value="yes">{{ $translations['yes'] }}</button>
                                     </div>
                                     <div class="col">
-                                        <button type="submit" class="btn btn-danger btn-block" name="response" value="no">{{__('cae.no', [], ( __DIR__ . '/../Translations' ) ) }}</button>
+                                        <button type="submit" class="btn btn-danger btn-block" name="response" value="no">{{ $translations['no'] }}</button>
                                     </div>
                                 </div>
                             </form>
