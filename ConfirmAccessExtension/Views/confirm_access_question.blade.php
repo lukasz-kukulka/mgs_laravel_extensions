@@ -17,7 +17,7 @@
                                 <div class="row mt-3">
                                     <div class="col">
                                         @php
-                                            $translations = include base_path( 'vendor\mgs\mgs-laravel-extensions\ConfirmAccessExtension\Translations\\' . app()->getLocale() . '\cae.php' );
+                                            $translations = include base_path( 'vendor\mgs\mgs_laravel_extensions\ConfirmAccessExtension\Translations\\' . app()->getLocale() . '\cae.php' );
                                         @endphp
                                         <button type="submit" class="btn btn-success btn-block" name="response" value="yes">{{ $translations['yes'] }}</button>
                                     </div>
