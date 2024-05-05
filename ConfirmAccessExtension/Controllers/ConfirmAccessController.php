@@ -15,4 +15,5 @@ class ConfirmAccessController extends Controller
         } else {
             dd( 'ERROR in ConfirmAccessController::redirect' );
         }
+    }
 }
