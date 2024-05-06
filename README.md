@@ -44,3 +44,25 @@ dodając linie `base_path('vendor/mgs/mgs_laravel_extensions/ConfirmAccessExtens
         ],
     
     ```
+
+## Jak użyć
+
+W kontrolerze w wybranej metodzie dodajemy
+
+```php
+return view('confirm_access_question')
+            ->with('id', 'delete_user_account')
+            ->with('question', __('base.user_account_delete_question'))
+            ->with('yesRoute', 'user/profile/destroy/confirm')
+            ->with('noRoute', 'profile');
+```
+
+Gdzie:
+
+`id` : nazwa akcji
+
+`question` : pytanie które sie wyświetli na stronie
+
+`yesRoute` : ścieżka do której zostaniemy przekierowani po naciśnieciu potwierdzenia
+
+`noRoute` : ścieżka do której zostaniemy przekierowani po naciśnieciu zaprzeczenia
