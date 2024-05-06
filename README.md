@@ -1,37 +1,46 @@
-## Ogólne informacje
+# ConfirmAccessExtension
 
-- Każdy branch reprezentuje jedno rozszerzenie
-- Na branchu master są dostępne wszystkie rozszerzenia
-- Na każdym branchu jest wyjaśnienie do czego służy
-- Każdy branch ma tagi które wskazują wersję rozszerzenia
+## Jak dodać do projektu rozszerzenie `ConfirmAccessExtension`
 
-## Instrukcja jak dodać do projektu
+1. W pliku `composer.json` dodajemy sekcje, lub do sekcji `repositories` o ile istnieje:
+    
+    ```php
+    "repositories": [
+            {
+                "type": "vcs",
+                "url": "git@github.com:lukasz-kukulka/mgs_laravel_extensions.git",
+                "branch": "ConfirmAccessExtension"
+            }
+        ],
+    ```
+    
+2. W pliku `composer.json` dodajemy sekcje, lub do sekcji `autoload` o ile istnieje:
+    
+    ```php
+    "autoload": {
+            "psr-4": {
+                "MGS\\": "vendor/mgs/mgs_laravel_extensions"
+            },
+    }
+    ```
+    
+3. Dodajemy również w pliku `composer.json` w sekcji `require`
+ `"mgs/confirm_access": "dev-ConfirmAccessExtension",`
 
-1. W pliku `composer.json` dodajemy sekcje, lub do sekcji `“repositories”` o ile istnieje:
-
-```php
-"repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:lukasz-kukulka/mgs-laravel-extensions.git"
-        }
-    ],
-```
-
-3. Dodajemy również w pliku `composer.json` w sekcji `“require”`
-np: `"mgs/mgs-laravel-extensions": "dev-ConfirmAccessExtension#0.0.3",`
-gdzie:  
-    - dev-: obowiązkowy element
-    - **ConfirmAccessExtension: nazwa brancha, czyli rozszerzenia**
-    - #: obowiązkowy element
-    - 0.0.3 tag wersji, czyli wersja rozszerzenia (tag wersji znajdziemy na głównej stronie repo na github, po prawej stronie w sekcji `Releases` )
-
-```php
-"mgs/mgs-laravel-extensions": "dev-ConfirmAccessExtension#0.0.3",
-```
-
-3. Wykonujemy polecenie w konsoli `composer update`, przy pierwszym uruchomieniu poprosi o token`, wykonujemy instrukcje z konsoli jakie sie pojawią
-
-## Edycja
-
-WKRÓTCE
+4. Wykonujemy polecenie w konsoli `composer update`, przy pierwszym uruchomieniu z jakimkolwiek branchem z naszej biblioteki poprosi o token`, wykonujemy instrukcje z konsoli jakie sie pojawią
+5. Dodajemy do pliku `routes/web.php` plik z naszymi trasami dodając linie na górze pliku
+    
+    ```php
+    require base_path('vendor\mgs\mgs_laravel_extensions\ConfirmAccessExtension\Routes\routes.php');
+    ```
+    
+6. Zmieniamy plik: `config/view.php`
+dodając linie `base_path('vendor/mgs/mgs_laravel_extensions/ConfirmAccessExtension/Views'),`
+    
+    ```php
+    'paths' => [
+            resource_path('views'),
+            base_path('vendor/mgs/mgs_laravel_extensions/ConfirmAccessExtension/Views'),
+        ],
+    
+    ```
