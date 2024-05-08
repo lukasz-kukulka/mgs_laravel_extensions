@@ -1,6 +1,6 @@
 <?php
 
-namespace MGS\ConfirmAccessExtension\Controllers;
+namespace MGSCAE\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
