@@ -10,7 +10,7 @@
                         <div class="card-header">{{ $title }}</div>
                         <div class="card-body">
                             <div class="info_announcement">{{ $infoAnnouncement }}</div><br>
-                            <div class="link_to_home_page"><a href="{{ route( $redirectionRouteName ) }}">{{ $reditectedText }}</a></div><br>
+                            <div class="link_to_home_page"><a href="{{ route( $redirectionRouteName ) }}">{{ $redirectedText }}</a></div><br>
                         </div>
                     </div>
                 </div>
