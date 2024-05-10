@@ -9,7 +9,7 @@
                     <div class="card text-center">
                         <div class="card-header">{{ __('base.user_profile_title') }}</div>
                         <div class="card-body">
-                            <form action="{{ route('update-password') }}" method="POST">
+                            <form action="{{ route('update_password') }}" method="POST">
                                 @csrf
                                 <div class="card-body">
                                     @if (session('status'))
