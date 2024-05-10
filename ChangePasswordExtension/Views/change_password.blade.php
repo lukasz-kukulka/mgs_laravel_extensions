@@ -7,49 +7,36 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card text-center">
-                        <div class="card-header">{{ __('base.user_profile_title') }}</div>
+                        <div class="card-header">{{ __('base.user_account_change_password_title') }}</div>
                         <div class="card-body">
-                            <form action="{{ route('update_password') }}" method="POST">
+                            <form action="{{ route('update_password') }}" method="POST" class="card-body">
                                 @csrf
-                                <div class="card-body">
-                                    @if (session('status'))
-                                        <div class="alert alert-success" role="alert">
-                                            {{ session('status') }}
-                                        </div>
-                                    @elseif (session('error'))
-                                        <div class="alert alert-danger" role="alert">
-                                            {{ session('error') }}
-                                        </div>
-                                    @endif
-
-                                    {{-- <div class="mb-3">
-                                        <label for="oldPasswordInput" class="form-label">Old Password</label>
-                                        <input name="old_password" type="password" class="form-control @error('old_password') is-invalid @enderror" id="oldPasswordInput"
-                                            placeholder="Old Password">
-                                        @error('old_password')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div> --}}
-                                    <div class="mb-3">
-                                        <label for="newPasswordInput" class="form-label">New Password</label>
-                                        <input name="new_password" type="password" class="form-control @error('new_password') is-invalid @enderror" id="newPasswordInput"
-                                            placeholder="New Password">
-                                        @error('new_password')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
+                                @php $translations = include base_path( 'vendor\mgs\change_password\ChangePasswordExtension\Translations\\' . app()->getLocale() . '\cae.php' ); @endphp
+                                @if ( session('status') )
+                                    <div class="alert alert-success" role="alert">
+                                        {{ session('status') }}
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="confirmNewPasswordInput" class="form-label">Confirm New Password</label>
-                                        <input name="new_password_confirmation" type="password" class="form-control" id="confirmNewPasswordInput"
-                                            placeholder="Confirm New Password">
+                                @elseif (s ession('error') )
+                                    <div class="alert alert-danger" role="alert">
+                                        {{ session('error') }}
                                     </div>
-
+                                @endif
+                                <div class="mb-3">
+                                    <label for="new_password" class="form-label">{{ $translations['new_password']  }}</label>
+                                    <input name="new_password" type="password" class="form-control @error('new_password') is-invalid @enderror" id="new_password"
+                                        placeholder="{{ $translations['new_password']  }}">
+                                    @error('new_password')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
                                 </div>
-
-                                <div class="card-footer">
-                                    <button class="btn btn-success">Submit</button>
+                                <div class="mb-3">
+                                    <label for="confirm_new_password" class="form-label">{{ $translations['new_password_confirm'] }}</label>
+                                    <input name="new_password_confirmation" type="password" class="form-control" id="confirm_new_password"
+                                        placeholder="{{ $translations['new_password_confirm'] }}">
                                 </div>
-
+                                <div class="d-grid">
+                                    <button class="btn btn-success" type="submit">{{ $translations['submit'] }}</button>
+                                </div>
                             </form>
                         </div>
                     </div>
