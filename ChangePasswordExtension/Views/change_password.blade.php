@@ -16,7 +16,7 @@
                                     <div class="alert alert-success" role="alert">
                                         {{ session('status') }}
                                     </div>
-                                @elseif (s ession('error') )
+                                @elseif ( session('error') )
                                     <div class="alert alert-danger" role="alert">
                                         {{ session('error') }}
                                     </div>
@@ -30,8 +30,8 @@
                                     @enderror
                                 </div>
                                 <div class="mb-3">
-                                    <label for="confirm_new_password" class="form-label">{{ $translations['new_password_confirm'] }}</label>
-                                    <input name="new_password_confirmation" type="password" class="form-control" id="confirm_new_password"
+                                    <label for="new_password_confirmation" class="form-label">{{ $translations['new_password_confirm'] }}</label>
+                                    <input name="new_password_confirmation" type="password" class="form-control" id="new_password_confirmation"
                                         placeholder="{{ $translations['new_password_confirm'] }}">
                                 </div>
                                 <div class="d-grid">

@@ -14,9 +14,9 @@ class ChangePasswordController extends Controller
     }
 
     public function updatePassword( Request $request ) {
-        $request->validate([
-            'new_password' => ['required', 'string', 'min:8', 'confirmed']
-        ]);
+        $request->validate( [
+            'new_password' => ['required', 'string', 'min:8', 'confirmed'],
+        ] );
 
         User::whereId(auth()->user()->id)->update( [
             'password' => Hash::make( $request->new_password )
