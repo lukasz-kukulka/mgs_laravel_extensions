@@ -1,6 +1,15 @@
 {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Otwórz okno modalne
   </button> --}}
+  {{-- <x-modal_window_component id=""
+                          title=""
+                          message=""
+                          closeButtonText=""
+                          secondButtonLink=""
+                          secondButtonText=""
+                          thirdButtonLink=""
+                          thirdButtonText=""
+                          /> --}}
 
 <div class="modal fade" id="modal_window_{{ $id }}" tabindex="-1" aria-labelledby="modal_label_{{ $id }}" aria-hidden="true">
     <div class="modal_dialog">
