@@ -1,14 +1,14 @@
 {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Otwórz okno modalne
   </button> --}}
-  {{-- <x-modal_window_component id=""
-                          title=""
-                          message=""
-                          closeButtonText=""
-                          secondButtonLink=""
-                          secondButtonText=""
-                          thirdButtonLink=""
-                          thirdButtonText=""
+  {{-- <x-modal_window_component id="modal_label_"
+                          title="Brak dostepu do treści"
+                          message="Tylko zalogowani użytkopwnicy maja dostęp do danych kontaktowych"
+                          closeButtonText="Zamknij okno"
+                          secondButtonLink="/login"
+                          secondButtonText="Zaloguj"
+                          thirdButtonLink="/register"
+                          thirdButtonText="Zarejestruj"
                           /> --}}
 
 <div class="modal fade" id="modal_window_{{ $id }}" tabindex="-1" aria-labelledby="modal_label_{{ $id }}" aria-hidden="true">

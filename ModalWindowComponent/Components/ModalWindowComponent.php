@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class CargoDetailsComponent extends Component
+class ModalWindowComponent extends Component
 {
     public function __construct( $id, $title, $message, $closeButtonText, $secondButtonLink, $secondButtonText, $thirdButtonLink, $thirdButtonText ) {
         $this->id = $id;
@@ -29,9 +29,6 @@ class CargoDetailsComponent extends Component
             'secondButtonText' => $this->secondButtonText,
             'thirdButtonLink' => $this->thirdButtonLink,
             'thirdButtonText' => $this->thirdButtonText,
-            'name' => $this->param_table_name,
-            'number' => $this->numbers,
-            'params' => $this->params_elements,
         ] );
     }
 
