@@ -21,7 +21,7 @@ class ModalWindowComponent extends Component
     }
 
     public function render(): View|Closure|string {
-        return view('vendor.mgs.modal_window.modal_window_component.views.components.modal_window_component', [
+        return view('modal_window_component', [
             'id' => $this->id,
             'title' => $this->title,
             'message' => $this->message,
