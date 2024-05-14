@@ -29,3 +29,15 @@
         </div>
     </div>
 </div>
+
+{{-- Jeśli Twoje pliki komponentu znajdują się w katalogu vendor, najpierw musisz utworzyć symboliczny link do tych plików, aby były dostępne w Twojej aplikacji Laravel.
+
+Utwórz symboliczny link do pliku ModalWindowComponent.php w katalogu app/View/Components:
+bash
+Copy code
+php artisan make:component-alias --component="vendor\mgs\modal_window\ModalWindowComponent\Components\ModalWindowComponent.php"
+Utwórz symboliczny link do pliku modal_window_component.blade.php w katalogu resources/views/components:
+bash
+Copy code
+php artisan make:view-component-alias --component="vendor\mgs\modal_window\ModalWindowComponent\Views\Components\modal_window_component.blade.php"
+Po wykonaniu tych komend powinny zostać utworzone odpowiednie symboliczne linki do Twoich plików komponentów. Następnie możesz zarejestrować komponenty za pomocą Blade::component() w AppServiceProvider tak, jak opisałem wcześniej. --}}

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components;
+namespace MGSMWC\Components;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -9,6 +9,7 @@ use Illuminate\View\Component;
 class ModalWindowComponent extends Component
 {
     public function __construct( $id, $title, $message, $closeButtonText, $secondButtonLink, $secondButtonText, $thirdButtonLink, $thirdButtonText ) {
+
         $this->id = $id;
         $this->title = $title;
         $this->message = $message;
@@ -20,7 +21,7 @@ class ModalWindowComponent extends Component
     }
 
     public function render(): View|Closure|string {
-        return view('components.cargo_details_component', [
+        return view('vendor.mgs.modal_window.modal_window_component.views.components.modal_window_component', [
             'id' => $this->id,
             'title' => $this->title,
             'message' => $this->message,
