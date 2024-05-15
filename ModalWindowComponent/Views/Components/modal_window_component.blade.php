@@ -1,15 +1,15 @@
 {{-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Otwórz okno modalne
   </button> --}}
-  {{-- <x-modal_window_component id="modal_label_"
-                          title="Brak dostepu do treści"
-                          message="Tylko zalogowani użytkopwnicy maja dostęp do danych kontaktowych"
-                          closeButtonText="Zamknij okno"
-                          secondButtonLink="/login"
-                          secondButtonText="Zaloguj"
-                          thirdButtonLink="/register"
-                          thirdButtonText="Zarejestruj"
-                          /> --}}
+  {{-- <x-modal_window_component id="access_limited"
+  title="{{ __( 'base.modal_window_accsess_limited_title' ) }}"
+  message="{{ __( 'base.modal_window_accsess_limited_message' ) }}"
+  closeButtonText="{{ __( 'base.modal_window_close_window' ) }}"
+  secondButtonLink="/login"
+  secondButtonText="{{ __( 'base.login' ) }}"
+  thirdButtonLink="/register"
+  thirdButtonText="{{ __( 'base.register' ) }}"
+  /> --}}
 
 <div class="modal fade" id="modal_window_{{ $id }}" role="dialog" tabindex="-1" aria-labelledby="modal_label_{{ $id }}" aria-hidden="true">
     <div class="modal-dialog" role="document">
