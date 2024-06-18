@@ -21,7 +21,11 @@ class ChangePasswordController extends Controller
         User::whereId(auth()->user()->id)->update( [
             'password' => Hash::make( $request->new_password )
         ] );
-        $translations = include base_path( 'vendor\mgs\change_password\ChangePasswordExtension\Translations\\' . app()->getLocale() . '\base.php' );
+        $translations = include base_path( 'vendor' . DIRECTORY_SEPARATOR .
+                                           'mgs' . DIRECTORY_SEPARATOR .
+                                           'change_password' . DIRECTORY_SEPARATOR .
+                                           'ChangePasswordExtension' . DIRECTORY_SEPARATOR .
+                                           'Translations' . DIRECTORY_SEPARATOR . app()->getLocale() . DIRECTORY_SEPARATOR . 'base.php' );
 
         return view('redirection_info')
             ->with('id', 'changed_password_info')
