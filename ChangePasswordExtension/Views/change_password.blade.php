@@ -6,7 +6,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card text-center">
-                @php $translations = include base_path('vendor\mgs\change_password\ChangePasswordExtension\Translations\\' . app()->getLocale() . '\base.php'); @endphp
+                @php $translations = include base_path( 'vendor' . DIRECTORY_SEPARATOR .
+                                                        'mgs' . DIRECTORY_SEPARATOR .
+                                                        'change_password' . DIRECTORY_SEPARATOR .
+                                                        'ChangePasswordExtension' . DIRECTORY_SEPARATOR .
+                                                        'Translations' . DIRECTORY_SEPARATOR . app()->getLocale() . DIRECTORY_SEPARATOR . 'base.php' );
+                @endphp
                 <div class="card-header">{{ $translations['user_account_change_password_title'] }}</div>
                 <div class="card-body">
                     <div class="row justify-content-center">
