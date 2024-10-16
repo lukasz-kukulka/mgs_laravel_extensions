@@ -17,7 +17,15 @@
                                 <div class="row mt-3">
                                     <div class="col">
                                         @php
-                                            $translations = include base_path( 'vendor\mgs\confirm_access\ConfirmAccessExtension\Translations\\' . app()->getLocale() . '\cae.php' );
+                                            $translations = include base_path(
+                                                'vendor' . DIRECTORY_SEPARATOR . 
+                                                'mgs' . DIRECTORY_SEPARATOR . 
+                                                'confirm_access' . DIRECTORY_SEPARATOR . 
+                                                'ConfirmAccessExtension' . DIRECTORY_SEPARATOR . 
+                                                'Translations' . DIRECTORY_SEPARATOR . 
+                                                app()->getLocale() . DIRECTORY_SEPARATOR . 
+                                                'cae.php'
+                                            );
                                         @endphp
                                         <button type="submit" class="btn btn-success btn-block" name="response" value="yes">{{ $translations['yes'] }}</button>
                                     </div>
